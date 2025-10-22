@@ -1,23 +1,33 @@
-Name = megaphone
+NAME = megaphone
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-all: $(Name)
+# Colors
+GREEN = \033[0;32m
+BLUE = \033[0;34m
+RED = \033[0;31m
+RESET = \033[0m
 
-$(Name): $(OBJS)
-	$(CC) $(CFLAGS) -o $(Name) $(OBJS)
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	@echo "$(GREEN)✓ Megaphone compiled successfully!$(RESET)"
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(BLUE)Compiling: $<$(RESET)"
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
+	@echo "$(RED)✗ Object files removed$(RESET)"
 
 fclean: clean
-	rm -f $(Name)
+	@rm -f $(NAME)
+	@echo "$(RED)✗ Megaphone removed$(RESET)"
 
 re: fclean all
 
