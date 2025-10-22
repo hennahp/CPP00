@@ -1,23 +1,32 @@
-Name  = phonebook
+NAME  = phonebook
 CC    = c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Contact.cpp PhoneBook.cpp
+SRCS = main.cpp Contact.cpp Phonebook.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-all: $(Name)
+GREEN = \033[0;32m
+BLUE = \033[0;34m
+RED = \033[0;31m
+RESET = \033[0m
 
-$(Name): $(OBJS)
-	$(CC) $(CFLAGS) -o $(Name) $(OBJS)
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	@echo "$(GREEN)✓ PhoneBook compiled successfully!$(RESET)"
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(BLUE)Compiling: $<$(RESET)"
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
+	@echo "$(RED)✗ Object files removed$(RESET)"
 
 fclean: clean
-	rm -f $(Name)
+	@rm -f $(NAME)
+	@echo "$(RED)✗ PhoneBook removed$(RESET)"
 
 re: fclean all
 
