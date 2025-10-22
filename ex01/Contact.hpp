@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hparveen <hparveen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/22 13:21:27 by hparveen          #+#    #+#             */
+/*   Updated: 2025/10/22 13:21:29 by hparveen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
@@ -21,7 +33,7 @@ public:
     std::string getDarkestSecret() const;
 
     void setFirstName(const std::string &firstName);
-    void setLastName(const std::string &LastName);
+    void setLastName(const std::string &lastName);
     void setNickname(const std::string &nickname);
     void setPhoneNumber(const std::string &phoneNumber);
     void setDarkestSecret(const std::string &darkestSecret);
