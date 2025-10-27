@@ -14,19 +14,19 @@ RESET = \033[0m
 all: $(NAME)
 
 $(NAME): $(OBJS)
-@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
-@echo "$(GREEN)✓ Megaphone compiled successfully!$(RESET)"
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	@echo "$(GREEN)✓ Megaphone compiled successfully!$(RESET)"
 
 %.o: %.cpp
-@$(CC) $(CFLAGS) -c $< -o $@
-@echo "$(BLUE)Compiling: $<$(RESET)"
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(BLUE)Compiling: $<$(RESET)"
 
 clean:
-@rm -f $(OBJS)
-@echo "$(RED)✗ Object files removed$(RESET)"
+	@rm -f $(OBJS)
+	@echo "$(RED)✗ Object files removed$(RESET)"
 
 fclean: clean
-@rm -f $(NAME)
+	@rm -f $(NAME)
 	@echo "$(RED)✗ Megaphone removed$(RESET)"
 
 re: fclean all
